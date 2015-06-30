@@ -397,6 +397,31 @@ describe('expect', function () {
     err(function(){
       expect({foo: 'bar'}).to.be.empty;
     }, "expected { foo: \'bar\' } to be empty");
+
+    err(function(){
+      expect(null).to.be.empty;
+    }, "expected null to exist");
+
+    err(function(){
+      expect(undefined).to.be.empty;
+    }, "expected undefined to exist");
+
+    err(function(){
+      expect().to.be.empty;
+    }, "expected undefined to exist");
+
+    err(function(){
+      expect(null).to.not.be.empty;
+    }, "expected null to exist");
+
+    err(function(){
+      expect(undefined).to.not.be.empty;
+    }, "expected undefined to exist");
+
+    err(function(){
+      expect().to.not.be.empty;
+    }, "expected undefined to exist");
+    
   });
 
   it('property(name)', function(){
